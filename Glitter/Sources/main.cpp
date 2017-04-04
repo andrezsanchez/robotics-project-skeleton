@@ -33,6 +33,8 @@ using std::make_shared;
 
 #include <math.h> // fmod
 
+#include <algorithm> // std::transform
+
 void checkShaderError(GLuint shader) {
   GLint status;
   glGetShaderiv(shader, GL_COMPILE_STATUS, &status);
