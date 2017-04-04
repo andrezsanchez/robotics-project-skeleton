@@ -1,5 +1,8 @@
-# [Glitter](http://polytonic.github.io/Glitter/)
-![Screenshot](http://i.imgur.com/MDo2rsy.jpg)
+# Skeleton project for ITCS 6151/8151
+
+Based on the [Glitter](http://polytonic.github.io/Glitter/) project, with some extra code to draw
+rectangles and demonstrate how to do rotation.
+
 
 ## Summary
 Glitter is a dead simple boilerplate for OpenGL, intended as a starting point for the tutorials on [learnopengl.com](http://www.learnopengl.com) and [open.gl](https://open.gl). Glitter compiles and statically links every required library, so you can jump right into doing what you probably want: how to get started with OpenGL.
