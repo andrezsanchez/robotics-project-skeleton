@@ -11,7 +11,7 @@ Glitter is a dead simple boilerplate for OpenGL, intended as a starting point fo
 Glitter has a single dependency: [cmake](http://www.cmake.org/download/), which is used to generate platform-specific makefiles or project files. Start by cloning this repository, making sure to pass the `--recursive` flag to grab all the dependencies. If you forgot, then you can `git submodule update --init` instead.
 
 ```bash
-git clone --recursive https://github.com/Polytonic/Glitter
+git clone --recursive https://github.com/andrezsanchez/robotics-project-skeleton
 cd Glitter
 cd Build
 ```
