@@ -232,7 +232,8 @@ int main(int argc, char * argv[]) {
     fprintf(stderr, "OpenGL %s\n", glGetString(GL_VERSION));
 
     //float angle = 0.0f;
-    BoxObject object(-5.0f, 5.0f, -10.0f, 100.0f);
+    BoxObject object1(-5.0f, 5.0f, -10.0f, 100.0f);
+    BoxObject object2(-5.0f, 5.0f, -10.0f, 100.0f);
 
     auto timeStart = std::chrono::high_resolution_clock::now();
     double timePrev = 0.0;
@@ -246,22 +247,35 @@ int main(int argc, char * argv[]) {
         glClearColor(0.25f, 0.25f, 0.25f, 1.0f);
         glClear(GL_COLOR_BUFFER_BIT);
 
-        // get current time
+        // get current time in seconds
         auto now = std::chrono::high_resolution_clock::now();
         double time = std::chrono::duration_cast<std::chrono::duration<float>>(now-timeStart).count();
 
         // time difference in seconds since last frame
         //double delta = time - timePrev;
 
-        mat4 r = glm::rotate(
-            mat4(1.0),
-            static_cast<float>(time),
-            vec3(0.0f,0.0f,1.0f)
-        );
-        mat4 p = glm::translate(mat4(1.0), vec3(200, 20, 0));
+        {
+          mat4 r = glm::rotate(
+              mat4(1.0),
+              static_cast<float>(time),
+              vec3(0.0f,0.0f,1.0f)
+          );
+          mat4 p = glm::translate(mat4(1.0), vec3(200, 20, 0));
 
-        object.setPosition(p * r);
-        object.render(view, projection);
+          object1.setPosition(p * r);
+          object1.render(view, projection);
+        }
+        {
+          mat4 r = glm::rotate(
+              mat4(1.0),
+              static_cast<float>(time) * 3.0f,
+              vec3(0.0f,0.0f,1.0f)
+          );
+          mat4 p = glm::translate(mat4(1.0), vec3(-200, 20, 0));
+
+          object2.setPosition(p * r);
+          object2.render(view, projection);
+        }
 
         timePrev = time;
 
